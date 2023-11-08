@@ -1,0 +1,11 @@
+module "test" {
+ source = "../"
+ 
+ cidr_blocks = {
+   eu-central-1a = "10.10.0.0/24"
+ }
+ 
+ environment = "test-${random_string.this.result}"
+ name        = "test-${random_string.this.result}"
+ vpc_id      = aws_vpc.test.id
+}
