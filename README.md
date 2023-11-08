@@ -1,3 +1,3 @@
 # terraform_samples
 
-some generic examples on how to use terraform with aws
+some generic examples on how to use terraform
