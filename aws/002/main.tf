@@ -9,17 +9,19 @@ terraform {
   required_version = ">= 1.2.0"
 }
 
+
 provider "aws" {
-  region  = "eu-south-1"
+  region  = var.regione
   profile = "sbrozzi@sinthera"
 }
 
 resource "aws_instance" "example_server" {
-  ami           = "ami-025765768cef3dca5"
-  instance_type = "t3.micro"
+  ami           = var.immagine
+  instance_type = var.tipo_istanza
 
   tags = {
-    Name = "Terraform Example"
+    Name = "Terraform Example",
+    segreto = var.secret
   }
 }
 
